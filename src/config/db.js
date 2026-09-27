@@ -4,22 +4,17 @@ const {Pool} = pkg;
 
 dotenv.config()
 
-console.log(process.env.DB_USER);
-console.log("DB_USER:", process.env.DB_USER);
-console.log("DB_USER:", process.env.DB_HOST);
-console.log("DB_USER:", process.env.DB_USER);
+if (!process.env.DATABASE_URL) {
+    throw new Error("DATABASE_URL must be set in .env");
+}
 
-
+//Neon requires SSL; the connection string includes sslmode=require
 const pool = new Pool({
-    user : process.env.DB_USER,
-    host : process.env.DB_HOST,
-    database : process.env.DB_NAME,
-    password: process.env.DB_PASSWORD,
-    port : process.env.DB_PORT
+    connectionString : process.env.DATABASE_URL,
 });
 
 pool.on("connect", () =>{
-    console.log("Connection pool etsablished with database...!")
+    console.log("Connection pool established with Neon database...!")
 });
 
 export default pool;

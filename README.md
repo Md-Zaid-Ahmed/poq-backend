@@ -1,10 +1,9 @@
-# 🛠️ Node.js + Express + PostgreSQL CRUD API with Docker
+# 🛠️ Node.js + Express + Neon Postgres CRUD API
 
 A simple REST API to perform basic **CRUD operations** on a `users` table using:
 
 - **Node.js** and **Express** for the backend  
-- **PostgreSQL** for the database  
-- **Docker** for containerization  
+- **Neon** (serverless PostgreSQL) for the database  
 
 ---
 
@@ -12,15 +11,21 @@ A simple REST API to perform basic **CRUD operations** on a `users` table using:
 
 - Node.js  
 - Express.js  
-- PostgreSQL  
-- Docker + Docker Compose
+- Neon Postgres (`pg` driver)
 
 ---
 
-## 🐳 Setup : Running PostgreSQL in Docker Container with Volume 
+## ⚡ Setup : Neon Postgres
 
-To run the project with Docker and PostgreSQL, follow the setup guide:  
-🔗 [Docker Setup Guide](https://medium.com/@basit26374/how-to-run-postgresql-in-docker-container-with-volume-bound-c141f94e4c5a)
+1. Create a project at [neon.tech](https://neon.tech).
+2. In the Neon console, click **Connect** and copy the connection string.
+3. Copy `.env.example` to `.env` and set `DATABASE_URL` to that connection string (use `sslmode=verify-full`).
+4. Install and run:
+   ```bash
+   npm install
+   npm run dev
+   ```
+   The `users` table is created automatically on startup (see [`src/data/data.sql`](src/data/data.sql)).
 
 ---
 ## 📁 Folder Structure 
@@ -43,6 +48,7 @@ To run the project with Docker and PostgreSQL, follow the setup guide:
         └── userRoutes.js
     └── index.js
 └── 📝 .env
+└── 📝 .env.example
 └── 📝 .gitignore
 └── 📦 package-lock.json
 └── 📦 package.json

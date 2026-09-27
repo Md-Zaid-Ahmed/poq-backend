@@ -1,21 +1,23 @@
 {
   "name": "basic-crud-postgress",
   "version": "1.0.0",
-  "description": "basic curd with postgres",
+  "description": "basic crud with neon postgres",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "nodemon src/index.js"
+    "dev": "nodemon src/index.js"
   },
   "author": "zaid",
   "license": "ISC",
   "dependencies": {
+    "@neon/config": "^1.8.2",
+    "@neon/env": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "joi": "^17.13.3",
-    "pg": "^8.16.0"
+    "pg": "^8.23.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

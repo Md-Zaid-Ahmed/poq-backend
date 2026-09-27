@@ -17,17 +17,16 @@ const port = process.env.PORT || 5002;
 app.use(express.json());
 app.use(cors());
 
-//Routes 
+//Routes
 app.use("/api",userRoutes);
 
 //Error Handling MiddleWare
 app.use(errorHandler);
 
 
-//creating user table 
+//creating user table
 
 createUserTable();
-//Server Running 
 
 //TESTING DB
 
@@ -40,6 +39,8 @@ app.get("/", async (req, res) => {
     res.status(500).send("Failed to connect to DB");
   }
 });
+
+//Server Running
 
 app.listen(port,() => {
     console.log('Server is running on port : '+ port);
