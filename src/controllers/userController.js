@@ -28,7 +28,7 @@ export const getAllUsers = async (req, res , next ) =>{
 
     try {
         const users = await getAllUsersService();
-        handleResponse(res,201,"Users fetched successfully",users);
+        handleResponse(res,200,"Users fetched successfully",users);
     }
     catch(err)
     {
@@ -44,7 +44,7 @@ export const getUserById = async (req, res , next ) =>{
         {
             return handleResponse(res,404,"User not found ",user);
         }
-        handleResponse(res,201,"User fetched successfully",user);
+        handleResponse(res,200,"User fetched successfully",user);
     }
     catch(err)
     {
@@ -61,7 +61,7 @@ export const updateUser = async (req, res , next ) =>{
         {
             return handleResponse(res,404,"User not found ",user);
         }
-        handleResponse(res,201,"User updated successfully",user);
+        handleResponse(res,200,"User updated successfully",user);
     }
     catch(err)
     {
@@ -77,7 +77,7 @@ export const deleteUser = async (req, res , next ) =>{
         {
             return handleResponse(res,404,"User not found ",user);
         }
-        handleResponse(res,201,"User deleted successfully",user);
+        handleResponse(res,200,"User deleted successfully",user);
     }
     catch(err)
     {

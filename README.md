@@ -86,7 +86,7 @@ A simple REST API to perform basic **CRUD operations** on a `users` table using:
 **Response:**
 ```json
 {
-  "status": 201,
+  "status": 200,
   "message": "User fetched successfully",
   "data": {
     "id": 1,
@@ -136,7 +136,7 @@ A simple REST API to perform basic **CRUD operations** on a `users` table using:
 **Response:**
 ```json
 {
-  "status": 201,
+  "status": 200,
   "message": "User updated successfully",
   "data": {
     "id": 4,
@@ -154,7 +154,7 @@ A simple REST API to perform basic **CRUD operations** on a `users` table using:
 **Response:**
 ```json
 {
-  "status": 201,
+  "status": 200,
   "message": "User deleted successfully",
   "data": {
     "id": 4,
